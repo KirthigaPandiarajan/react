@@ -107,3 +107,36 @@ const {cuisine,name,time,rating,imgid} = props?. data;
 {jsonArr.map((restaurant) => (<RestaurantCard key={restaurant.data.id} resObj={restaurant}/>))} inside an Component JSX
 Whenever map is used key attribute should be used and it will be unique. When an resto card comes where to place it, the order. React cleans the container and rerender the cards. If unique id resto card React exactly knows the id and renders it dont rerenders it. 
 index as a key is anti-pattern
+
+EP -5
+-----
+create folder and move code.src=>components=>Header.js/Header.jsx/Header.tsx
+To export command is export default Header;
+First export then import.
+Two types of import/export => default and named
+import Header from "./components/Header";
+import Header from "./components/Header.js";
+import Header from "./components/Header.jsx";
+make utils/common folder have static data as config.Use snakecase as const LOGO_URL ="http://kirthi"; 
+to export multiple things from a file use named export as export const LOGO_URL = "http://kirthi";
+to import named export use as import {LOGO_URL} from "utils/constants";
+<img src={LOGO_URL} />
+filter is working but UI is not reflected based on filter.
+state variable is a super powerfulvariable other than normal javascript variable.
+React Hooks - normal javascript utility functions
+useState() - powerfull state variables
+useEffect()
+import {useState} from "react";
+let a = [data]; or let [a] = useState([data]);
+in super powerfull variable keeps the variable update with UI Layer.To modify will not do assignment, we use set.
+let [a, setA] = useState([data]);
+setA([data2]);
+Whenever a state variable changes, React will rerender the component.
+React uses Reconsilation algorithm/React fiber in React16.
+Virtual DOM is not an actual DOM. Its an representation of actual DOM.
+Virtual DOM are objects ie React Element.
+Diff algorithm finds difference between old Virtual DOM and new Virtual DOM. Caluates the difference and updates the DOM.
+React do Efficient DOM manipulation using Virtual DOM and updates the DOM.
+React constantly monitores the state variable. Find the diff and renders the DOM.
+setA([data2]); will find the diff and renders the DOM.
+array destructing to setter [,] 
