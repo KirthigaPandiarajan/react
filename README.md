@@ -140,3 +140,54 @@ React do Efficient DOM manipulation using Virtual DOM and updates the DOM.
 React constantly monitores the state variable. Find the diff and renders the DOM.
 setA([data2]); will find the diff and renders the DOM.
 array destructing to setter [,] 
+
+
+EP-6
+Two types of architecture Monolithic architecture and Microservice architecture.
+Separation of concerns and single responsibilty concern - work on independent service.
+Two approach 1] loads->API->Render 2] loads->Render->API->Render 2nd approach is better and followed always in React. Render cycles are better in React.
+Hook is normal javascript function
+useEffect is a function with two arguments callback function and dependency array.
+when the render is complete and then call back of useEffect is called.
+import {useEffect} from "react";
+useEffect(() => {console.log('hello')},[])
+use fetch from browser to get promise use async await not then catch
+Instead of loading button do shimmer UI. Shimmer UI is blank grey cards. 
+Conditional Rendering is rendering based on condition.
+Ternary operator
+how const value will modify usestate variable
+how setfn updates the value and calls the component function with updated value called.
+State react variable triggers a reconsilation cycle or React rerenders the component.
+
+EP -7
+empty dependency array useEffect() is called on initial render of that component.
+no dependency array useEffect() is called on every render of that component.
+with dependency array value useEffect() is called every time dependency array value is updated.
+Never declare useState hook outside the component.
+It used for creating local state variables inside the function scope and it should be at the top.
+Never use useState() inside if else, it creates inconsistency in your code.
+Never create state variables inside for loop.
+react-router-dom
+npm install react-router-dom
+import {createBrowserRouter, RouterProvider} from react-router-dom;
+let a = createBrowserRouter([{path: "/",element: <App />,errorElement: <Error />},{path:"/about",element: <About />}])
+root.render(<RouterProvider router={a}/>)
+rafce is visual code
+If hook, function starts with use.
+import {useRouteError} from "react-router-dom";
+let b = useRouteError();
+b.status,b.statusText
+Outlet is filled with children of App.
+import {Outlet} from "react-router-dom";
+<Outlet />
+children: [
+    {}
+].
+Never use anchor for other page routing, it reloads the page.
+React refreshs the Component. A single Page Application
+import {Link} from "react-router-dom";
+<Link to="\about">ABOUT </Link>
+Two types of routing - 1] Client side routing 2] Server side routing 
+Client side routing api is called in home page and are single page application and refreshs the Component
+GraphQL helps with underfetching or overfetching. GraphGL uses only the data it uses. 
+import { useParams } from "react-router-dom";

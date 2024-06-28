@@ -1699,13 +1699,47 @@ import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
+import Error from "./components/Error";
+import About from "./components/About";
+import Address from "./components/Address";
+import Contact from "./components/Contact";
+import Home from "./components/Home";
+import Menu from "./components/Menu";
+import {createBrowserRouter, RouterProvider, Outlet} from "react-router-dom";
 
 let root = ReactDOM.createRoot(document.getElementById("root"));
 let parent = (
     <div>
         <Header />
-        <Body />
+        <Outlet />
         <Footer />
     </div>
 );
-root.render(parent);
+let route = createBrowserRouter([{
+    path: "/",
+    element: parent,
+    errorElement: <Error />,
+    children: [{
+        path: "/",
+        element: <Body />
+    },{
+        path: "/home",
+        element: <Home />
+    },{
+        path: "/about",
+        element: <About />
+    },{
+        path: "/contact",
+        element: <Contact />
+    },{
+        path: "/address",
+        element: <Address />
+    },
+    {
+        path: "/restaurantMenu/:resId",
+        element: <Menu />
+    }
+    ],
+    errorElement: <Error />
+}]);
+root.render(<RouterProvider router={route} />);

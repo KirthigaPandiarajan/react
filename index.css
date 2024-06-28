@@ -93,3 +93,26 @@
     line-height: 12px;
     color: gray;
 }
+.shimmer {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 50px;
+    justify-content: center;
+}
+.shimmer-card {
+    background-color: rgb(238, 231, 231);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 150px;
+    height: 250px;
+    margin: 20px;
+    overflow: hidden;
+    display: block !important;
+    border-radius: 5px;
+}
+.search_box {
+    padding: 50px;
+}
+.top-restaurant {
+    margin-left: 50px;
+}
